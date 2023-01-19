@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import ZendeskSDKMessaging
+import ZendeskSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,6 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        //Initialize Zendesk Messaging SDK
+        Zendesk.initialize(withChannelKey: "eyJzZXR0aW5nc191cmwiOiJodHRwczovL2Nvbi1sZWFmd29ya3MuemVuZGVzay5jb20vbW9iaWxlX3Nka19hcGkvc2V0dGluZ3MvMDFHTlk0MjVWNUtTSkcxQkJEVEQ5NU5BSlouanNvbiJ9",
+                           messagingFactory: DefaultMessagingFactory()) { result in
+                if case let .failure(error) = result {
+                    print("Messaging did not initialize.\nError: \(error.localizedDescription)")
+                }
+            }
+        
         // Override point for customization after application launch.
         return true
     }

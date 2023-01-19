@@ -16,6 +16,7 @@
 		014926FB2979727000E9FCF1 /* Messaging_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014926FA2979727000E9FCF1 /* Messaging_demoTests.swift */; };
 		014927052979727000E9FCF1 /* Messaging_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014927042979727000E9FCF1 /* Messaging_demoUITests.swift */; };
 		014927072979727000E9FCF1 /* Messaging_demoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014927062979727000E9FCF1 /* Messaging_demoUITestsLaunchTests.swift */; };
+		014927152979736300E9FCF1 /* ZendeskSDKMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 014927142979736300E9FCF1 /* ZendeskSDKMessaging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014927152979736300E9FCF1 /* ZendeskSDKMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +145,9 @@
 			dependencies = (
 			);
 			name = "Messaging demo";
+			packageProductDependencies = (
+				014927142979736300E9FCF1 /* ZendeskSDKMessaging */,
+			);
 			productName = "Messaging demo";
 			productReference = 014926E02979726F00E9FCF1 /* Messaging demo.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +220,9 @@
 				Base,
 			);
 			mainGroup = 014926D72979726F00E9FCF1;
+			packageReferences = (
+				014927132979736300E9FCF1 /* XCRemoteSwiftPackageReference "sdk_messaging_ios" */,
+			);
 			productRefGroup = 014926E12979726F00E9FCF1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -596,6 +604,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		014927132979736300E9FCF1 /* XCRemoteSwiftPackageReference "sdk_messaging_ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/zendesk/sdk_messaging_ios/";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		014927142979736300E9FCF1 /* ZendeskSDKMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 014927132979736300E9FCF1 /* XCRemoteSwiftPackageReference "sdk_messaging_ios" */;
+			productName = ZendeskSDKMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 014926D82979726F00E9FCF1 /* Project object */;
 }
